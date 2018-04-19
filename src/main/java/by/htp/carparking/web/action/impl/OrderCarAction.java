@@ -7,7 +7,6 @@ import static by.htp.carparking.web.util.HttpRequestParamFormatter.*;
 import javax.servlet.http.HttpServletRequest;
 
 import by.htp.carparking.service.OrderService;
-import by.htp.carparking.service.impl.OrderServiceImpl;
 import by.htp.carparking.web.action.BaseAction;
 
 

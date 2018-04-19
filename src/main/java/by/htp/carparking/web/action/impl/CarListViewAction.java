@@ -52,6 +52,11 @@ public class CarListViewAction implements BaseAction {
 		
 		request.setAttribute(REQUEST_PARAM_CAR_LIST, cars);
 		
+		//если нажата кнопка "Заказать"
+		if(request.getParameter(REQUEST_PARAM_BTN_ORDER)!=null) {
+			return PAGE_CREATE_ORDER;
+		}
+		
 		return PAGE_USER_MAIN;
 	}
 

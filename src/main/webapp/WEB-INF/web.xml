@@ -15,6 +15,10 @@
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   
+ <!--  <listener>
+  	<listener-class>by.htp.carparking.web.listener.SimpleSessionListener</listener-class>
+  </listener> -->
+  
   <servlet>
     <description></description>
     <display-name>SecondServlet</display-name>

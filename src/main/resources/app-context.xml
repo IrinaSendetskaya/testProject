@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+<bean id="view_car_list" class="by.htp.carparking.web.action.impl.CarListViewAction" scope="singleton">
+  	
+	  <property name="carService" ref="carService"></property>
+	
+  </bean>
+  
+  <bean id="carService" class="by.htp.carparking.service.impl.CarServiceImpl" scope="singleton">
+  	
+	  <property name="carDao" ref="carDao"></property>
+	
+  </bean>
+  
+  <bean id ="carDao" class="by.htp.carparking.dao.impl.CarDaoDBImpl" scope="singleton">
+  
+  </bean>
+  
+  
+  <bean id="order_car" class="by.htp.carparking.web.action.impl.OrderCarAction" scope="singleton">
+  	
+	  <property name="orderService" ref="orderService"></property>
+	
+  </bean>
+  
+  <bean id="orderService" class="by.htp.carparking.service.impl.OrderServiceImpl" scope="singleton">
+  	
+	  <property name="orderDao" ref="orderDao"></property>
+	
+  </bean>
+  
+  <bean id ="orderDao" class="by.htp.carparking.dao.impl.OrderDaoDBImpl" scope="singleton">
+  
+  </bean>
+  
+</beans>
