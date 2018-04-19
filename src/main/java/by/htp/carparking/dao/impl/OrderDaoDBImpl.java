@@ -2,7 +2,10 @@ package by.htp.carparking.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -49,8 +52,28 @@ public class OrderDaoDBImpl implements OrderDao {
 
 	@Override
 	public List<Order> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List <Order> list=new ArrayList<>();
+        try(Connection connection= DBConnectionHelper.connect();
+            Statement statement=connection.createStatement()
+        ) {
+            String sql="SELECT * FROM Orders;";
+
+            ResultSet resultSet=statement.executeQuery(sql);
+
+            while (resultSet.next())
+            {
+                Order order =new Order(
+                        resultSet.getInt("id"),
+                        resultSet.getInt("idUser"),
+                        resultSet.getInt("idCar")
+                );
+                list.add(order);
+            }
+        } catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+        return list;
 	}
 
 	@Override

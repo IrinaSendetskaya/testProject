@@ -9,6 +9,8 @@
  
  <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <body>
 
 	<fieldset>
 	
@@ -24,7 +26,7 @@
 	 </div>
 	
 	 <div class="container">
-	    <c:forEach items="${order_car}" var="order">
+	    <c:forEach items="${ordercar}" var="order">
 	            
 	                <div class="row">
 	                   <div class="col-md-2">№ заказа</div>
@@ -133,6 +135,8 @@
 	 </div>
 	
 	</fieldset>
+	
+	</body>
 	
 </html>
 

@@ -1,7 +1,9 @@
 package by.htp.carparking.service.impl;
 
+import java.util.List;
+
 import by.htp.carparking.dao.OrderDao;
-import by.htp.carparking.dao.impl.OrderDaoDBImpl;
+import by.htp.carparking.domain.Order;
 import by.htp.carparking.service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
@@ -34,6 +36,13 @@ public class OrderServiceImpl implements OrderService {
 		orderDao.insertNewOrder(userId, carId);
 		
 		
+	}
+
+
+
+	@Override
+	public List<Order> getOrders() {
+		return orderDao.readAll();
 	}
 
 }

@@ -4,6 +4,7 @@ public class WebConstantDeclaration {
 
 	public static final String REQUEST_PARAM_ACTION="action";
 	public static final String REQUEST_PARAM_CAR_LIST="carlist";
+	public static final String REQUEST_PARAM_ORDER_CAR="ordercar";
 	
 	public static final String REQUEST_PARAM_USER_ID="user_id";
 	public static final String REQUEST_PARAM_CAR_ID="car_id";

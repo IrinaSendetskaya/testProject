@@ -40,9 +40,12 @@
 		         <div class="col-md-3">${car.brand}</div>
 		         <div class="col-md-3">${car.model}</div>
 		         <div class="col-md-2">
-			            <button id="btnOrder" value="btnOrder" name="btnOrder" class="btn btn-success">
+				     <form action="createorder.jsp" method="post">                       
+                          <button id="btnOrder" value="btnOrder" name="btnOrder" class="btn btn-success">
 			                  Заказать
 			            </button>
+                     </form>
+			            
 	        	 </div>
 		
 		      </div>		
