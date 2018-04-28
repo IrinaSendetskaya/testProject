@@ -42,6 +42,10 @@ public class Order extends Entity{
 		this.idCar = idCar;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [ id=" + super.getId() + " user_id=" + idUser + ", car_id=" + idCar + ", dateStart= , dateEnd=]";
+	}
 
 	@Override
 	public int hashCode() {

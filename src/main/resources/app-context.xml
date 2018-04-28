@@ -16,7 +16,7 @@
 	
   </bean>
   
-  <bean id ="carDao" class="by.htp.carparking.dao.impl.CarDaoDBImpl" scope="singleton">
+  <bean id ="carDao" class="by.htp.carparking.dao.hbn.CarDaoHibernateImpl" scope="singleton">
   
   </bean>
   

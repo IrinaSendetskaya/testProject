@@ -35,6 +35,24 @@ public class Car extends Entity {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+	
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		super.finalize();
+	}
+
+	@Override
+	public String toString() {
+		return "Car {" + "id=" + super.getId() + ", brand=" + brand + ", model=" + model+ '}';
+	}
 
 	@Override
 	public int hashCode() {
@@ -70,5 +88,7 @@ public class Car extends Entity {
 			return false;
 		return true;
 	}
+	
+	
 
 }
