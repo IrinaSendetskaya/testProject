@@ -1,6 +1,6 @@
 package by.htp.carparking.domain;
 
-public class Order extends Entity{
+public class Order extends EntityCarparking{
 
 	/**
 	 * 

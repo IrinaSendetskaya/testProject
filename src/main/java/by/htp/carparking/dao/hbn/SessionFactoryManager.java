@@ -11,7 +11,8 @@ public final class SessionFactoryManager {
 	private static SessionFactory sessionFactory;
 	private static SessionFactory buildSessionFactory() {
 		
-		Configuration configuration=new Configuration();
+		//for XML
+		Configuration configuration=new Configuration();   
 		
 			configuration.configure("config/hibernate.cfg.xml");
 			
@@ -19,6 +20,9 @@ public final class SessionFactoryManager {
 					.applySettings(configuration.getProperties())
 					.build();
 			SessionFactory sessionFactory=configuration.buildSessionFactory(serviceRegistry);
+		
+		//SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+		
 		
 			return sessionFactory;
 	}
@@ -30,5 +34,10 @@ public final class SessionFactoryManager {
 		
 		return sessionFactory;
 	}
+	
+	public static void closeSession() {
+        // Close caches and connection pools
+        getSessionFactory().close();
+}
 
 }

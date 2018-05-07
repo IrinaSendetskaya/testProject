@@ -1,23 +1,47 @@
 package by.htp.carparking.domain;
 
-public class Car extends Entity {
+import java.io.Serializable;
 
-	/**
-	 * 
-	 */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Car")
+public class Car  implements Serializable{
+
 	private static final long serialVersionUID = -5603686378052315999L;
 	
+	@Column(name = "model")             //можно было и не указывать, тк совпадают
 	private String model;
+	
+	@Column(name = "brand")             //можно было и не указывать, тк совпадают
 	private String brand;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")             //можно было и не указывать, тк совпадают
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public Car(int id, String model, String brand) {
-		super(id);
+		
 		this.model = model;
 		this.brand = brand;
 	}
 
 	public Car() {
-		super();
+
 	}
 
 	public String getModel() {
@@ -43,15 +67,11 @@ public class Car extends Entity {
 		return super.clone();
 	}
 
-	@Override
-	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
-		super.finalize();
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Car {" + "id=" + super.getId() + ", brand=" + brand + ", model=" + model+ '}';
+		return "Car {" + "id=" + id + ", brand=" + brand + ", model=" + model+ '}';
 	}
 
 	@Override

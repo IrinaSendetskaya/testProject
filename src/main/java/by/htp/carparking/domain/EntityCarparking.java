@@ -2,7 +2,7 @@ package by.htp.carparking.domain;
 
 import java.io.Serializable;
 
-public abstract class Entity implements Serializable {
+public abstract class EntityCarparking implements Serializable {
 
 	/**
 	 * 
@@ -18,12 +18,12 @@ public abstract class Entity implements Serializable {
 		this.id = id;
 	}
 
-	public Entity(int id) {
+	public EntityCarparking(int id) {
 		super();
 		this.id = id;
 	}
 
-	public Entity() {
+	public EntityCarparking() {
 		super();
 	}
 	

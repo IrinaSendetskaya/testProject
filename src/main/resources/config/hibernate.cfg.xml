@@ -25,7 +25,8 @@
 			
 		</property> -->
 		
-		<mapping resource="hbm/car.hbm.xml" />
+		<!-- <mapping resource="hbm/car.hbm.xml" /> -->
+		<mapping class="by.htp.carparking.domain.Car" />
 		
 	</session-factory>
 

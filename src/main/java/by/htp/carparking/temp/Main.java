@@ -2,13 +2,10 @@ package by.htp.carparking.temp;
 
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import by.htp.carparking.dao.CarDao;
-import by.htp.carparking.dao.hbn.SessionFactoryManager;
 import by.htp.carparking.domain.Car;
 
 public class Main {
@@ -20,7 +17,7 @@ public class Main {
 				new ClassPathXmlApplicationContext("app-context.xml");
 		CarDao dao=(CarDao) applicationContext.getBean("carDao");
 
-		Car car=dao.read(2);
+		Car car=dao.read(3);
 		System.out.println(car);
 		
 		System.out.println("----------------");
@@ -35,6 +32,30 @@ public class Main {
 		for (Car carList : cars) {
 			System.out.println(carList);
 		}
+		//Car car2=new Car();
+		//car2=dao.read(2);
+		car.setBrand("ccccc");
+		dao.update(car);
+        System.out.println(car);
+        
+		
+		System.out.println("----------------");
+		
+		dao.delete(car);
+        System.out.println(car);
+        
+
+		System.out.println("----------------");
+		
+         cars=dao.readAll();
+		
+		for (Car carList : cars) {
+			System.out.println(carList);
+		}
+		
+		System.out.println("----------------");
+		
+		
 //	SessionFactory factory=SessionFactoryManager.getSessionFactory();
 //	
 //	

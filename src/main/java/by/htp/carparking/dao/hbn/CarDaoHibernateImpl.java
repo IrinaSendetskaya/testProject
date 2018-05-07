@@ -31,6 +31,9 @@ public class CarDaoHibernateImpl implements CarDao {
 		Criteria criteria=session.createCriteria(Car.class);       //с пом маппинга выполняет круд
 		criteria.add(Restrictions.eq("id", id));
 		Car car=(Car) criteria.list().get(0);
+//		Transaction tr = session.beginTransaction();
+//		Car car = (Car) session.load(Car.class, id);
+//		tr.commit();
 		session.close();
 		return car;
 		
@@ -38,13 +41,25 @@ public class CarDaoHibernateImpl implements CarDao {
 
 	@Override
 	public void update(Car entity) {
-		// TODO Auto-generated method stub
+		Session session=SessionFactoryManager.getSessionFactory().openSession();
+		Transaction transaction=session.beginTransaction();
+		
+		session.update(entity);
+		
+		transaction.commit();
+		session.close();
 
 	}
 
 	@Override
 	public void delete(Car entity) {
-		// TODO Auto-generated method stub
+		Session session=SessionFactoryManager.getSessionFactory().openSession();
+		Transaction transaction=session.beginTransaction();
+		
+		session.delete(entity);
+		
+		transaction.commit();
+		session.close();
 
 	}
 
