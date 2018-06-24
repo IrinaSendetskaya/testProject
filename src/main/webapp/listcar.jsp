@@ -9,32 +9,35 @@
 	<body>
 		
 		<div class="page-header">
-		  <h1> Все авто</h1>
+		  <h2> Все авто</h2>
 		  <p class="lead"></p>
 		</div>
 	
 		<div class="container">
-		<div class="row">
-		   <div class="col-md-1">№</div>
-		   <div class="col-md-2">Бренд</div>
-		   <div class="col-md-2">Модель</div>		
-		</div>
-		<br>
+			<div class="row">
+			   <div class="col-md-1">№</div>
+			   <div class="col-md-2">Бренд</div>
+			   <div class="col-md-2">Модель</div>	
+	   		   <div class="col-md-2">Действия</div>	
+			</div>
+			<br>
 		
-		<c:forEach items="${cars}" var="car">
-		   <form class="update-good-${car.id}" action="do?command=Index" method=POST>
-		      <div class="row">
-		         <div class="col-md-1">${car.id}</div>
-		         <div class="col-md-2">
-		                     <input id="brand" class="form-control input-md" name="brand" class="form-control"
-		                        value="${car.brand}"  />		
-		         </div>
-		         <div class="col-md-2">${car.model}</div>
+			<c:forEach items="${cars}" var="car">
+			   <form class="update-good-${car.id}" action="do?command=Index" method=POST>
+			      <div class="row">
+			         <div class="col-md-1">${car.id}</div>
+			         <div class="col-md-2">${car.brand}</div>					         
+			         <div class="col-md-2">${car.model}</div>
+			         
+			         <div class="col-md-2">
+			            <button id="btnOrder" value="Order" name="Order" class="btn btn-success">
+			                  Заказать
+			            </button>
+	        		 </div>
+			      </div>		
+			   </form>		
+			</c:forEach>
 		
-		      </div>		
-		   </form>
-		
-		</c:forEach>
 		</div>
 		
 		<br><br>
